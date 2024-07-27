@@ -1,0 +1,5 @@
+spring:
+  config:
+    name: zmh-seckill
+  profiles:
+    active: dev

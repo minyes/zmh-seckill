@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmh.infrastructure.dao.SeckillProductsDao">
+
+    <resultMap id="BaseMap" type="com.zmh.infrastructure.po.SeckillProductsPO">
+        <id column="id" property="id"></id>
+        <result column="delete_flag" property="deleteFlag"></result>
+        <result column="create_time" property="createTime"></result>
+        <result column="update_time" property="updateTime"></result>
+    </resultMap>
+
+</mapper>
