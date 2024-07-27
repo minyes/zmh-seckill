@@ -10,7 +10,14 @@
     </parent>
 
     <artifactId>zmh-seckill-trigger</artifactId>
-
+    <dependencies>
+        <!-- 添加对其他模块的依赖 -->
+        <dependency>
+            <groupId>com.zmh</groupId>
+            <artifactId>zmh-seckill-app</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+    </dependencies>
     <properties>
         <maven.compiler.source>11</maven.compiler.source>
         <maven.compiler.target>11</maven.compiler.target>
