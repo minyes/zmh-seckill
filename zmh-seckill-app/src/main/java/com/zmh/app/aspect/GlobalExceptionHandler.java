@@ -59,7 +59,6 @@ public class GlobalExceptionHandler {
     @ExceptionHandler(MethodArgumentNotValidException.class)
     public Result handleMethodArgumentNotValidException(MethodArgumentNotValidException e, HttpServletRequest request) {
         log.error("发生参数校验异常！原因是：",e);
-        Result error = Result.fail(ResultCode.PARAM_IS_INVALID,e);
-        return error;
+        return Result.fail(ResultCode.PARAM_IS_INVALID,e);
     }
 }
