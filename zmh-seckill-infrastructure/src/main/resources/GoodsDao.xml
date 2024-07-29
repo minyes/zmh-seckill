@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.zmh.infrastructure.dao.GoodsDao">
+
+    <resultMap id="BaseMap" type="com.zmh.infrastructure.po.GoodsPO">
+        <id column="goods_id" property="goodsId"/>
+        <result column="product_name" property="productName"/>
+        <result column="description" property="description"/>
+        <result column="price" property="price"/>
+        <result column="stock" property="stock"/>
+        <result column="created_date" property="createdDate"/>
+        <result column="updated_date" property="updatedDate"/>
+
+    </resultMap>
+
+</mapper>

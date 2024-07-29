@@ -1,7 +1,7 @@
 package com.zmh.trigger.http;
 
 import com.zmh.app.result.Result;
-import com.zmh.trigger.http.cmd.ISeckillGoodsCommand;
+import com.zmh.application.cmd.seckill.ISeckillGoodsCommand;
 import com.zmh.trigger.http.dto.req.QuerySeckillGoodsReqDTO;
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsDetailsRespDTO;
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsRespDTO;

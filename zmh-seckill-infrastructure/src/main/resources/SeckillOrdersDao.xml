@@ -4,10 +4,12 @@
 <mapper namespace="com.zmh.infrastructure.dao.SeckillOrdersDao">
 
     <resultMap id="BaseMap" type="com.zmh.infrastructure.po.SeckillOrdersPO">
-        <id column="id" property="id"></id>
-        <result column="delete_flag" property="deleteFlag"></result>
-        <result column="create_time" property="createTime"></result>
-        <result column="update_time" property="updateTime"></result>
+        <id column="seckill_order_id" property="seckillOrderId"/>
+        <result column="user_id" property="userId"/>
+        <result column="seckill_product_id" property="seckillProductId"/>
+        <result column="order_id" property="orderId"/>
+        <result column="created_date" property="createdDate"/>
+        <result column="updated_Date" property="updatedDate"/>
     </resultMap>
 
 </mapper>

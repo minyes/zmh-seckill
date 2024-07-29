@@ -11,12 +11,17 @@ import java.time.LocalDateTime;
  * @date: 2024年07月27日 15:50
  */
 @Data
-public class ProductsPO {
+public class GoodsPO {
+
+    /**
+     * 主键
+     */
+    private Long id;
 
     /**
      * 产品id
      */
-    private Long productId;
+    private Long goodsId;
 
     /**
      * 产品名称

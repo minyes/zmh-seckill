@@ -8,5 +8,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @date: 2024年07月27日 16:14
  */
 @Mapper
-public interface SeckillProductsDao {
+public interface SeckillGoodsDao {
 }

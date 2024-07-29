@@ -1,7 +1,7 @@
 package com.zmh.trigger.http;
 
 import com.zmh.app.result.Result;
-import com.zmh.trigger.http.cmd.ISeckillCommand;
+import com.zmh.application.cmd.seckill.ISeckillCommand;
 import com.zmh.trigger.http.dto.req.DoSeckillReqDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.*;

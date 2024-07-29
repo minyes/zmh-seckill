@@ -4,10 +4,12 @@
 <mapper namespace="com.zmh.infrastructure.dao.OrdersDao">
 
     <resultMap id="BaseMap" type="com.zmh.infrastructure.po.OrdersPO">
-        <id column="id" property="id"></id>
-        <result column="delete_flag" property="deleteFlag"></result>
-        <result column="create_time" property="createTime"></result>
-        <result column="update_time" property="updateTime"></result>
+        <id column="order_id" property="orderId"/>
+        <result column="user_id" property="userId"/>
+        <result column="total_amount" property="totalAmount"/>
+        <result column="order_status" property="orderStatus"/>
+        <result column="created_date" property="createdDate"/>
+        <result column="updated_date" property="updatedDate"/>
     </resultMap>
 
 </mapper>

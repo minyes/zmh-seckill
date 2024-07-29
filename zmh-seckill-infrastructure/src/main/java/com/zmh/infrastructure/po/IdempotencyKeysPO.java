@@ -5,37 +5,31 @@ import lombok.Data;
 import java.time.LocalDateTime;
 
 /**
- * @Description: UsersPO 用户信息表
+ * @Description: IdempotencyKeysPO
  * @author: zhou ming hao
- * @date: 2024年07月27日 15:20
+ * @date: 2024年07月29日 23:56
  */
 @Data
-public class UsersPO {
-
+public class IdempotencyKeysPO {
     /**
-     * 主键
+     * 主键id
      */
     private Long id;
 
     /**
-     * 用户did
+     * 幂等性键
      */
-    private Long userId;
+    private String idempotencyKey;
 
     /**
-     * 用户名称
+     * 请求数据
      */
-    private String username;
+    private String requestPayload;
 
     /**
-     * 密码
+     * 响应数据
      */
-    private String password;
-
-    /**
-     * 邮箱
-     */
-    private String email;
+    private String responsePayload;
 
     /**
      * 创建时间

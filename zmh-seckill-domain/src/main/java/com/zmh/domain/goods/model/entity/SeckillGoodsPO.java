@@ -1,4 +1,4 @@
-package com.zmh.infrastructure.po;
+package com.zmh.domain.goods.model.entity;
 
 import lombok.Data;
 
@@ -11,17 +11,17 @@ import java.time.LocalDateTime;
  * @date: 2024年07月27日 15:35
  */
 @Data
-public class SeckillProductsPO {
+public class SeckillGoodsPO {
 
     /**
      * 秒杀商品ID
      */
-    private Long seckillProductId;
+    private Long seckillGoodsId;
 
     /**
      * 商品ID
      */
-    private Long productId;
+    private Long goodsId;
 
     /**
      * 秒杀价格

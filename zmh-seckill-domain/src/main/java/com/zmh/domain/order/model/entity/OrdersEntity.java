@@ -1,6 +1,9 @@
-package com.zmh.infrastructure.po;
+package com.zmh.domain.order.model.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
@@ -11,12 +14,10 @@ import java.time.LocalDateTime;
  * @date: 2024年07月27日 15:56
  */
 @Data
-public class OrdersPO {
-
-    /**
-     * 主键
-     */
-    private Long id;
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+public class OrdersEntity {
 
     /**
      * 订单id

@@ -6,7 +6,7 @@ package com.zmh.app.aspect;
  * @date: 2024年07月28日 17:16
  */
 
-import com.zmh.app.excption.SeckillExcption;
+import com.zmh.app.excption.SeckillException;
 import com.zmh.app.result.Result;
 import com.zmh.app.result.ResultCode;
 import lombok.extern.slf4j.Slf4j;
@@ -35,8 +35,8 @@ public class GlobalExceptionHandler {
      * @param request    request
      * @return    错误结果
      */
-    @ExceptionHandler(SeckillExcption.class)
-    public Result bizExceptionHandler(SeckillExcption e, HttpServletRequest request) {
+    @ExceptionHandler(SeckillException.class)
+    public Result bizExceptionHandler(SeckillException e, HttpServletRequest request) {
         log.error("发生业务异常！原因是: {}", e.getMessage());
         return Result.fail(e.getCode(), e.getMessage());
     }

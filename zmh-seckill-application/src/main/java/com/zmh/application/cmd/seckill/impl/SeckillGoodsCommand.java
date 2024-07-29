@@ -1,12 +1,12 @@
-package com.zmh.application.cmd;
+package com.zmh.application.cmd.seckill.impl;
 
-import com.zmh.trigger.http.cmd.ISeckillGoodsCommand;
+import com.zmh.application.cmd.seckill.ISeckillGoodsCommand;
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsDetailsRespDTO;
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsRespDTO;
 import org.springframework.stereotype.Component;
 
 /**
- * @Description: GoodsCommand 商品命令
+ * @Description: GoodsCommand 秒杀商品命令
  * @author: zhou ming hao
  * @date: 2024年07月28日 21:42
  */
@@ -24,6 +24,10 @@ public class SeckillGoodsCommand implements ISeckillGoodsCommand {
 
     @Override
     public QuerySeckillGoodsDetailsRespDTO querySeckillGoodsDetails(Long seckillGoodsId) {
+        // 从redis 获取秒杀商品详情信息 有就直接返回 设置有效时间5分钟 ，
+
+        // redis中没有从数据库中拿 并放入redis中
+
         return null;
     }
 }

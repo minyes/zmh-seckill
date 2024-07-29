@@ -8,5 +8,5 @@ import org.apache.ibatis.annotations.Mapper;
  * @date: 2024年07月27日 16:08
  */
 @Mapper
-public interface ProductsDao {
+public interface GoodsDao {
 }

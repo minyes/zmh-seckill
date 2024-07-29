@@ -10,7 +10,7 @@ import lombok.Data;
  */
 
 @Data
-public class SeckillExcption extends RuntimeException{
+public class SeckillException extends RuntimeException{
 
 
     /**
@@ -25,35 +25,35 @@ public class SeckillExcption extends RuntimeException{
 
 
 
-    public SeckillExcption() {
+    public SeckillException() {
         super();
     }
 
-    public SeckillExcption(ResultCode resultCode) {
+    public SeckillException(ResultCode resultCode) {
         super(resultCode.message());
         this.code = resultCode.code();
         this.message = resultCode.message();
     }
 
-    public SeckillExcption(ResultCode resultCode, Throwable cause) {
+    public SeckillException(ResultCode resultCode, Throwable cause) {
         super(resultCode.message(), cause);
         this.code = resultCode.code();
         this.message = resultCode.message();
     }
 
-    public SeckillExcption(String message) {
+    public SeckillException(String message) {
         super(message);
         this.setCode("999999");
         this.message = message;
     }
 
-    public SeckillExcption(String code, String message) {
+    public SeckillException(String code, String message) {
         super(message);
         this.code = code;
         this.message = message;
     }
 
-    public SeckillExcption(String code, String message, Throwable cause) {
+    public SeckillException(String code, String message, Throwable cause) {
         super(message, cause);
         this.code = code;
         this.message = message;

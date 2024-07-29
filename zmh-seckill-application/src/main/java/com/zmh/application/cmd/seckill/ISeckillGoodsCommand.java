@@ -1,4 +1,4 @@
-package com.zmh.trigger.http.cmd;
+package com.zmh.application.cmd.seckill;
 
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsDetailsRespDTO;
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsRespDTO;
