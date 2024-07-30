@@ -1,6 +1,9 @@
 package com.zmh.infrastructure.dao;
 
+import com.zmh.infrastructure.po.GoodsPO;
 import org.apache.ibatis.annotations.Mapper;
+
+import java.util.List;
 
 /**
  * @Description: ProductsDao 秒杀商品表
@@ -9,4 +12,7 @@ import org.apache.ibatis.annotations.Mapper;
  */
 @Mapper
 public interface GoodsDao {
+
+    List<GoodsPO> queryGoodsList(List<Long> goodsIdList);
+
 }

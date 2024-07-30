@@ -1,7 +1,7 @@
 package com.zmh.trigger.mq;
 
 import com.zmh.app.mq.DirectExchangeConfig;
-import com.zmh.application.cmd.seckill.ISeckillOrderCommand;
+import com.zmh.trigger.http.cmd.ISeckillOrderCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;

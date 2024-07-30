@@ -1,4 +1,4 @@
-package com.zmh.application.cmd.seckill;
+package com.zmh.trigger.http.cmd;
 
 import com.zmh.trigger.http.dto.req.DoSeckillReqDTO;
 

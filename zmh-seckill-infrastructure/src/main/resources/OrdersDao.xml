@@ -4,6 +4,7 @@
 <mapper namespace="com.zmh.infrastructure.dao.OrdersDao">
 
     <resultMap id="BaseMap" type="com.zmh.infrastructure.po.OrdersPO">
+        <id column="id" property="id"/>
         <id column="order_id" property="orderId"/>
         <result column="user_id" property="userId"/>
         <result column="total_amount" property="totalAmount"/>
@@ -11,5 +12,7 @@
         <result column="created_date" property="createdDate"/>
         <result column="updated_date" property="updatedDate"/>
     </resultMap>
-
+    <select id="getOrdersList" resultMap="BaseMap" parameterType="list">
+    select * from orders
+    </select>
 </mapper>

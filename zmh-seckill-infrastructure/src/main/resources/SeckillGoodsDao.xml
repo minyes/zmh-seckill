@@ -4,7 +4,8 @@
 <mapper namespace="com.zmh.infrastructure.dao.SeckillGoodsDao">
 
     <resultMap id="BaseMap" type="com.zmh.infrastructure.po.SeckillGoodsPO">
-        <id column="seckill_goods_id" property="seckillGoodsId"/>
+        <id column="id" property="id"/>
+        <result column="seckill_goods_id" property="seckillGoodsId"/>
         <result column="goods_Id" property="goodsId"/>
         <result column="seckill_Price" property="seckillPrice"/>
         <result column="start_time" property="startTime"/>
@@ -14,5 +15,11 @@
         <result column="updated_date" property="updatedDate"/>
 
     </resultMap>
-
+    <sql id="fields">
+        id
+        ,seckill_goods_id,goods_id,seckill_price,start_time,end_time,stock,created_date,updated_date
+    </sql>
+    <select id="querySeckillGoodsList" resultMap="BaseMap" >
+        select * from seckill_goods
+    </select>
 </mapper>

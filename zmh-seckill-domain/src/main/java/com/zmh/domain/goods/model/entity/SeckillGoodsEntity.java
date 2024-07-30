@@ -3,7 +3,6 @@ package com.zmh.domain.goods.model.entity;
 import lombok.Data;
 
 import java.time.LocalDate;
-import java.time.LocalDateTime;
 
 /**
  * @Description: SeckillProductsPO 秒杀商品表
@@ -11,7 +10,7 @@ import java.time.LocalDateTime;
  * @date: 2024年07月27日 15:35
  */
 @Data
-public class SeckillGoodsPO {
+public class SeckillGoodsEntity {
 
     /**
      * 秒杀商品ID
@@ -42,14 +41,4 @@ public class SeckillGoodsPO {
      * 秒杀库存数量
      */
     private Long stock;
-
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createdDate;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updatedDate;
 }

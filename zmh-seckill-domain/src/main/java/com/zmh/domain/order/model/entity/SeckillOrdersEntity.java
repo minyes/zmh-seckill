@@ -5,8 +5,6 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
-
 /**
  * @Description: SeckillOrders 秒杀订单表
  * @author: zhou ming hao
@@ -38,13 +36,4 @@ public class SeckillOrdersEntity {
      */
     private Long orderId;
 
-    /***
-     * 创建时间
-     */
-    private LocalDateTime createdDate;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updatedDate;
 }

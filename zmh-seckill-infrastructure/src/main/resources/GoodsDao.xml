@@ -4,7 +4,8 @@
 <mapper namespace="com.zmh.infrastructure.dao.GoodsDao">
 
     <resultMap id="BaseMap" type="com.zmh.infrastructure.po.GoodsPO">
-        <id column="goods_id" property="goodsId"/>
+        <id column="id" property="id"/>
+        <result column="goods_id" property="goodsId"/>
         <result column="product_name" property="productName"/>
         <result column="description" property="description"/>
         <result column="price" property="price"/>
@@ -13,5 +14,13 @@
         <result column="updated_date" property="updatedDate"/>
 
     </resultMap>
-
+    <sql id="fields">
+        id
+        ,goods_id,goods_name,description,price,stock,created_date,updated_date
+    </sql>
+    <select id="queryGoodsList" resultMap="BaseMap" parameterType="list">
+        select
+        <include refid="fields"/>
+        from goods
+    </select>
 </mapper>

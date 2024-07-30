@@ -2,8 +2,6 @@ package com.zmh.domain.idempotency.model.entity;
 
 import lombok.Data;
 
-import java.time.LocalDateTime;
-
 /**
  * @Description: IdempotencyKeysPO
  * @author: zhou ming hao
@@ -27,13 +25,4 @@ public class IdempotencyKeysEntity {
      */
     private String responsePayload;
 
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createdDate;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updatedDate;
 }

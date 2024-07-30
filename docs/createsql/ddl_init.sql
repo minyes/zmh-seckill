@@ -15,7 +15,7 @@ CREATE TABLE goods
 (
     id           INT AUTO_INCREMENT PRIMARY KEY COMMENT '主键',
     goods_id     INT COMMENT '商品ID',
-    name         VARCHAR(255)   NOT NULL COMMENT '商品名称',
+    goods_name         VARCHAR(255)   NOT NULL COMMENT '商品名称',
     description  TEXT COMMENT '商品描述',
     price        DECIMAL(10, 2) NOT NULL COMMENT '商品价格',
     stock        INT            NOT NULL COMMENT '库存数量',

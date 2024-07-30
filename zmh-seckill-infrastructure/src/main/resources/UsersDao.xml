@@ -4,10 +4,15 @@
 <mapper namespace="com.zmh.infrastructure.dao.UsersDao">
 
     <resultMap id="BaseMap" type="com.zmh.infrastructure.po.UsersPO">
-        <id column="id" property="id"></id>
-        <result column="delete_flag" property="deleteFlag"></result>
-        <result column="create_time" property="createTime"></result>
-        <result column="update_time" property="updateTime"></result>
+        <id column="id" property="id"/>
+        <result column="user_id" property="userId"/>
+        <result column="username" property="username"/>
+        <result column="password" property="password"/>
+        <result column="email" property="email"/>
+        <result column="created_date" property="createdDate"/>
+        <result column="updated_date" property="updatedDate"/>
+
+
     </resultMap>
 
 </mapper>

@@ -1,6 +1,10 @@
 package com.zmh.infrastructure.dao;
 
+import com.zmh.infrastructure.po.SeckillOrdersPO;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.session.RowBounds;
+
+import java.util.List;
 
 /**
  * @Description: SeckillOrdersDao 秒杀商品表
@@ -10,4 +14,5 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface SeckillOrdersDao {
 
+    List<SeckillOrdersPO> getSeckillOrder(RowBounds rowBounds);
 }

@@ -1,6 +1,6 @@
-package com.zmh.application.cmd.seckill.impl;
+package com.zmh.application.cmd.seckill;
 
-import com.zmh.application.cmd.seckill.ISeckillCommand;
+import com.zmh.trigger.http.cmd.ISeckillCommand;
 import com.zmh.trigger.http.dto.req.DoSeckillReqDTO;
 import org.springframework.stereotype.Component;
 

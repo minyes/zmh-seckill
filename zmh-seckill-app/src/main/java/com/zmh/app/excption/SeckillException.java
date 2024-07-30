@@ -2,6 +2,7 @@ package com.zmh.app.excption;
 
 import com.zmh.app.result.ResultCode;
 import lombok.Data;
+import lombok.EqualsAndHashCode;
 
 /**
  * @Description: SeckillExcption
@@ -9,6 +10,7 @@ import lombok.Data;
  * @date: 2024年07月28日 17:27
  */
 
+@EqualsAndHashCode(callSuper = true)
 @Data
 public class SeckillException extends RuntimeException{
 

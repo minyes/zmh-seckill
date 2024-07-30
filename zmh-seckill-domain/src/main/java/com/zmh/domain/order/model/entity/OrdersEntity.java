@@ -6,7 +6,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.time.LocalDateTime;
 
 /**
  * @Description: OrdersPO 订单表
@@ -39,13 +38,4 @@ public class OrdersEntity {
      */
     private String orderStatus;
 
-    /**
-     * 创建时间
-     */
-    private LocalDateTime createdDate;
-
-    /**
-     * 更新时间
-     */
-    private LocalDateTime updatedDate;
 }

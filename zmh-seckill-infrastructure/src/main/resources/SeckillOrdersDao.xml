@@ -4,7 +4,8 @@
 <mapper namespace="com.zmh.infrastructure.dao.SeckillOrdersDao">
 
     <resultMap id="BaseMap" type="com.zmh.infrastructure.po.SeckillOrdersPO">
-        <id column="seckill_order_id" property="seckillOrderId"/>
+        <id column="id" property="id"/>
+        <result column="seckill_order_id" property="seckillOrderId"/>
         <result column="user_id" property="userId"/>
         <result column="seckill_product_id" property="seckillProductId"/>
         <result column="order_id" property="orderId"/>
@@ -12,4 +13,8 @@
         <result column="updated_Date" property="updatedDate"/>
     </resultMap>
 
+    <select id="getSeckillOrder" resultMap="BaseMap" >
+        select *
+        from seckill_orders
+    </select>
 </mapper>

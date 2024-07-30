@@ -9,4 +9,13 @@ import lombok.Data;
  */
 @Data
 public class QuerySeckillGoodsReqDTO {
+    /**
+     * 当前页
+     */
+    private Integer pageNum;
+
+    /**
+     * 查询条数
+     */
+    private Integer limit;
 }

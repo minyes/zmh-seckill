@@ -1,6 +1,6 @@
-package com.zmh.application.cmd.seckill.impl;
+package com.zmh.application.cmd.seckill;
 
-import com.zmh.application.cmd.seckill.ISeckillOrderCommand;
+import com.zmh.trigger.http.cmd.ISeckillOrderCommand;
 import com.zmh.trigger.http.dto.req.PaySeckillOrderReqDTO;
 import com.zmh.trigger.http.dto.resp.QuerySeckillOrderRespDTO;
 import org.springframework.stereotype.Component;

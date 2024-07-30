@@ -1,7 +1,7 @@
 package com.zmh.trigger.http;
 
 import com.zmh.app.result.Result;
-import com.zmh.application.cmd.seckill.ISeckillOrderCommand;
+import com.zmh.trigger.http.cmd.ISeckillOrderCommand;
 import com.zmh.trigger.http.dto.req.PaySeckillOrderReqDTO;
 import com.zmh.trigger.http.dto.resp.QuerySeckillOrderRespDTO;
 import lombok.RequiredArgsConstructor;
