@@ -22,6 +22,7 @@ public class SeckillGoodsAggregates {
      * 商品id
      */
     private Long goodsId;
+
     /**
      * 商品信息
      */

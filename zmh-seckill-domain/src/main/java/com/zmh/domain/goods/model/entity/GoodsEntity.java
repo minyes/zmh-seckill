@@ -26,10 +26,12 @@ public class GoodsEntity {
      * 描述
      */
     private String description;
+
     /**
      * 价格
      */
     private BigDecimal price;
+
     /**
      * 库存数量
      */
