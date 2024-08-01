@@ -2,7 +2,6 @@ package com.zmh.infrastructure.utils.mq;
 
 import org.springframework.amqp.rabbit.core.RabbitTemplate;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.GetMapping;
 
 /**
  * @Description: DirectMqUtil
@@ -25,7 +24,6 @@ public class DirectMqUtil {
      *
      * @return
      */
-    @GetMapping("send")
     public Object sendMsg(String exchange,String routingKey,String msg) {
         rabbitTemplate.convertAndSend(exchange, routingKey, msg);
         return "direct消息发送成功！！";

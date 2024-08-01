@@ -23,6 +23,8 @@ public class DirectExchangeConfig {
     //定义路由键常量，用于交换机和队列之间的绑定
     public static final String DIRECT_ROUTING_KEY = "direct";
 
+    public static final String DIRECT_SECKILL_ROUTING_KEY2 = "SeckillOrder";
+
     //定义队列，名称为DIRECT_QUEUE
     @Bean
     public Queue directQueue() {
@@ -53,6 +55,17 @@ public class DirectExchangeConfig {
     @Bean
     public Binding bindingDirectExchange2(Queue directQueue2, DirectExchange directExchange) {
         return BindingBuilder.bind(directQueue2).to(directExchange).with(DIRECT_ROUTING_KEY);
+    }
+
+    /**
+     * 设置秒杀路由键  并绑定队列和交换机
+     * @param directQueue2
+     * @param directExchange
+     * @return
+     */
+    @Bean
+    public Binding bindingDirectExchange3(Queue directQueue2, DirectExchange directExchange) {
+        return BindingBuilder.bind(directQueue2).to(directExchange).with(DIRECT_SECKILL_ROUTING_KEY2);
     }
 
 }

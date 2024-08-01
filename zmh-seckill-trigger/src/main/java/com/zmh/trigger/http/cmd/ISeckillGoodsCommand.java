@@ -1,7 +1,6 @@
 package com.zmh.trigger.http.cmd;
 
 import com.zmh.trigger.http.dto.req.QuerySeckillGoodsReqDTO;
-import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsDetailsRespDTO;
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsRespDTO;
 
 import java.util.List;
@@ -25,5 +24,5 @@ public interface ISeckillGoodsCommand {
      * @param seckillGoodsId
      * @return
      */
-    QuerySeckillGoodsDetailsRespDTO querySeckillGoodsDetails(Long seckillGoodsId);
+    QuerySeckillGoodsRespDTO querySeckillGoodsDetails(Long seckillGoodsId);
 }

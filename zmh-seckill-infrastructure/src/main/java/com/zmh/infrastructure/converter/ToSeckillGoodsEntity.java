@@ -15,4 +15,5 @@ import org.mapstruct.factory.Mappers;
 public interface ToSeckillGoodsEntity extends PlusMapper<SeckillGoodsEntity, SeckillGoodsPO> {
     ToSeckillGoodsEntity INSTANCE = Mappers.getMapper(ToSeckillGoodsEntity.class);
 
+
 }

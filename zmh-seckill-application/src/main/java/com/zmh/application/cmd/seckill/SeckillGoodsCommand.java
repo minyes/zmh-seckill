@@ -1,10 +1,9 @@
 package com.zmh.application.cmd.seckill;
 
-import com.zmh.trigger.http.cmd.ISeckillGoodsCommand;
-import com.zmh.application.converter.ToQuerySeckillGoodsRespDTOMapper;
+import com.zmh.application.converter.ToQuerySeckillGoodsRespDTO;
 import com.zmh.domain.goods.service.ISeckillGoodsService;
+import com.zmh.trigger.http.cmd.ISeckillGoodsCommand;
 import com.zmh.trigger.http.dto.req.QuerySeckillGoodsReqDTO;
-import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsDetailsRespDTO;
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsRespDTO;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
@@ -24,13 +23,15 @@ public class SeckillGoodsCommand implements ISeckillGoodsCommand {
 
     @Override
     public List<QuerySeckillGoodsRespDTO> querySeckillGoodsList(QuerySeckillGoodsReqDTO querySeckillGoodsReqDTO) {
-        return ToQuerySeckillGoodsRespDTOMapper.INSTANCE.toList(
+        return ToQuerySeckillGoodsRespDTO.INSTANCE.toList(
                 seckillGoodsService.getSeckillGoodsList(querySeckillGoodsReqDTO.getPageNum(), querySeckillGoodsReqDTO.getLimit()));
     }
 
     @Override
-    public QuerySeckillGoodsDetailsRespDTO querySeckillGoodsDetails(Long seckillGoodsId) {
+    public QuerySeckillGoodsRespDTO querySeckillGoodsDetails(Long seckillGoodsId) {
 
-        return null;
+        return ToQuerySeckillGoodsRespDTO.INSTANCE
+                .convert(seckillGoodsService.querySeckillGoodsDetails(seckillGoodsId));
+
     }
 }

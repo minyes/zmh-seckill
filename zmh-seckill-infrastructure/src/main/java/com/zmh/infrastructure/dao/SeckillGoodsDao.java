@@ -15,4 +15,9 @@ import java.util.List;
 public interface SeckillGoodsDao {
 
     List<SeckillGoodsPO> querySeckillGoodsList(RowBounds rowBounds);
+
+    SeckillGoodsPO uerySeckillGoodsBySeckillGoodsId(Long seckillGoodsId);
+
+    List<SeckillGoodsPO> querySeckillGoodsAll();
+
 }

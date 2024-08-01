@@ -15,4 +15,6 @@ public interface GoodsDao {
 
     List<GoodsPO> queryGoodsList(List<Long> goodsIdList);
 
+    GoodsPO queryGoodsByGoodsId(Long goodsId);
+
 }

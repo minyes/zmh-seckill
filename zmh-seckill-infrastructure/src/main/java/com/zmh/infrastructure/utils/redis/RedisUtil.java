@@ -1,6 +1,7 @@
 package com.zmh.infrastructure.utils.redis;
 
 import org.springframework.data.redis.core.RedisTemplate;
+import org.springframework.data.redis.core.ValueOperations;
 import org.springframework.stereotype.Component;
 
 import java.util.concurrent.TimeUnit;
@@ -43,5 +44,9 @@ public class RedisUtil {
     // 作用: 从 Redis 中删除指定键及其对应的值
     public void deleteValue(String key) {
         redisTemplate.delete(key);
+    }
+
+    public ValueOperations opsForValue(){
+        return redisTemplate.opsForValue();
     }
 }

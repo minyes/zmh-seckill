@@ -15,4 +15,7 @@ public interface ISeckillGoodsService {
 
     List<SeckillGoodsAggregates> getSeckillGoodsList(Integer pageNum, Integer limit);
 
+
+    SeckillGoodsAggregates querySeckillGoodsDetails(Long seckillGoodsId);
+
 }

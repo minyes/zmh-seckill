@@ -1,7 +1,10 @@
 package com.zmh.application.cmd.seckill;
 
+import com.zmh.application.converter.ToDoSeckillEntity;
+import com.zmh.domain.goods.service.ISeckillService;
 import com.zmh.trigger.http.cmd.ISeckillCommand;
 import com.zmh.trigger.http.dto.req.DoSeckillReqDTO;
+import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Component;
 
 /**
@@ -10,21 +13,15 @@ import org.springframework.stereotype.Component;
  * @date: 2024年07月29日 0:35
  */
 @Component
+@RequiredArgsConstructor
 public class SeckillCommand implements ISeckillCommand {
 
+    private final ISeckillService seckillService;
 
     @Override
-    public void doSeckill(DoSeckillReqDTO doSeckillReqDTO, Long seckillGoodsId) {
-        // 判断内存中 内存中库存标识是否为 true有库存  false没库存 直接返回失败
+    public void doSeckill(DoSeckillReqDTO doSeckillReqDTO) {
 
-        // 抢库存  令牌桶 从redis 中获取库存
-
-        // 判断库存是否大于0 并进行预扣减 库存
-
-        // 判断 库存小于0  设置内存标识为false
-
-        // 调mq 异步下单
-
+        seckillService.doSeckil(ToDoSeckillEntity.INSTANCE.convert(doSeckillReqDTO));
 
     }
 }

@@ -19,7 +19,21 @@
         id
         ,seckill_goods_id,goods_id,seckill_price,start_time,end_time,stock,created_date,updated_date
     </sql>
-    <select id="querySeckillGoodsList" resultMap="BaseMap" >
-        select * from seckill_goods
+    <select id="querySeckillGoodsList" resultMap="BaseMap">
+        select
+        <include refid="fields"/>
+        from seckill_goods
+    </select>
+
+    <select id="uerySeckillGoodsBySeckillGoodsId" resultMap="BaseMap" parameterType="long">
+        select
+        <include refid="fields"/>
+        from seckill_goods where seckill_goods_id = #{seckillGoodsId}
+    </select>
+
+    <select id="querySeckillGoodsAll" resultMap="BaseMap">
+        select
+        <include refid="fields"/>
+        from seckill_goods where end_time > now()
     </select>
 </mapper>

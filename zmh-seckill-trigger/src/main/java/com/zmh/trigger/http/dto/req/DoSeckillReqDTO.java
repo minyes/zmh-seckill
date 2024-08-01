@@ -9,4 +9,19 @@ import lombok.Data;
  */
 @Data
 public class DoSeckillReqDTO {
+    /**
+     * 用户id
+     */
+    private Long userId;
+
+    /**
+     * 秒杀商品id
+     */
+    private Long seckillGoodsId;
+
+    /**
+     *
+     */
+    private Long goodsId;
+
 }

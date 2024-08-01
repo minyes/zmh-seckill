@@ -12,4 +12,6 @@ import java.util.List;
 public interface PlusMapper<S,T> {
 
     List<S> toList(List<T> list);
+
+    S convert(T source);
 }

@@ -12,7 +12,6 @@ public interface ISeckillCommand {
     /**
      * 秒杀商品 抢库存 下单
      * @param doSeckillReqDTO
-     * @param seckillGoodsId
      */
-    void doSeckill(DoSeckillReqDTO doSeckillReqDTO, Long seckillGoodsId);
+    void doSeckill(DoSeckillReqDTO doSeckillReqDTO);
 }

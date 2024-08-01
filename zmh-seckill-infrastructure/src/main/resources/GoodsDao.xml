@@ -23,4 +23,10 @@
         <include refid="fields"/>
         from goods
     </select>
+
+    <select id="queryGoodsByGoodsId" resultMap="BaseMap" parameterType="long">
+        select
+            <include refid="fields"/>
+            from goods where goods_id = #{goodsId}
+    </select>
 </mapper>

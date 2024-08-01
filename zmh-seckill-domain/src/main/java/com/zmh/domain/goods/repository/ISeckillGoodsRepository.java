@@ -12,9 +12,7 @@ import java.util.List;
 
 public interface ISeckillGoodsRepository {
 
-    List<SeckillGoodsAggregates> getSeckillGoodsAggregates(Integer pageNum, Integer limit);
+    List<SeckillGoodsAggregates> getSeckillGoodsAggregatesList(Integer pageNum, Integer limit);
 
-    List<SeckillGoodsAggregates> getRedisSeckillGoodsAggregates(String seckillGoodsKey);
-
-    void setRedisSeckillGoodsAggregates(String seckillGoodsKey,List<SeckillGoodsAggregates> seckillGoodsAggregatesList);
+    SeckillGoodsAggregates getSeckillGoodsAggregates(Long SeckillGoodsId);
 }

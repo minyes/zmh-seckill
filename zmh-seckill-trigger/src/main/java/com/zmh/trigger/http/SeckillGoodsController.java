@@ -3,7 +3,6 @@ package com.zmh.trigger.http;
 import com.zmh.app.result.Result;
 import com.zmh.trigger.http.cmd.ISeckillGoodsCommand;
 import com.zmh.trigger.http.dto.req.QuerySeckillGoodsReqDTO;
-import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsDetailsRespDTO;
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsRespDTO;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
@@ -29,15 +28,14 @@ public class SeckillGoodsController {
     @ApiOperation("查询秒杀商品列表")
     @PostMapping(path = "/getSeckill")
     public Result<List<QuerySeckillGoodsRespDTO>> querySeckillGoodsList(@RequestBody QuerySeckillGoodsReqDTO querySeckillGoodsReq) {
-
         return Result.success(seckillGoodsCommand.querySeckillGoodsList(querySeckillGoodsReq));
     }
 
 
     @ApiOperation("获取秒杀详情")
     @GetMapping(path = "/{seckillGoodsId}")
-    public Result<QuerySeckillGoodsDetailsRespDTO> querySeckillGoodsDetails(@PathVariable("seckillGoodsId") Long seckillGoodsId) {
-        return Result.success();
+    public Result<QuerySeckillGoodsRespDTO> querySeckillGoodsDetails(@PathVariable("seckillGoodsId") Long seckillGoodsId) {
+        return Result.success(seckillGoodsCommand.querySeckillGoodsDetails(seckillGoodsId));
     }
 
 

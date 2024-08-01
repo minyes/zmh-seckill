@@ -1,6 +1,5 @@
 package com.zmh.infrastructure.repository.mysql;
 
-import com.alibaba.fastjson2.JSON;
 import com.zmh.domain.goods.model.aggregates.SeckillGoodsAggregates;
 import com.zmh.domain.goods.model.entity.GoodsEntity;
 import com.zmh.domain.goods.model.entity.SeckillGoodsEntity;
@@ -9,8 +8,8 @@ import com.zmh.infrastructure.converter.ToGoodsEntity;
 import com.zmh.infrastructure.converter.ToSeckillGoodsEntity;
 import com.zmh.infrastructure.dao.GoodsDao;
 import com.zmh.infrastructure.dao.SeckillGoodsDao;
+import com.zmh.infrastructure.po.GoodsPO;
 import com.zmh.infrastructure.po.SeckillGoodsPO;
-import com.zmh.infrastructure.utils.redis.RedisUtil;
 import lombok.RequiredArgsConstructor;
 import org.apache.ibatis.session.RowBounds;
 import org.springframework.stereotype.Repository;
@@ -18,7 +17,6 @@ import org.springframework.stereotype.Repository;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
-import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Collectors;
 
@@ -35,11 +33,17 @@ public class SeckillGoodsRepository implements ISeckillGoodsRepository {
 
     private final SeckillGoodsDao seckillGoodsDao;
 
-    private final RedisUtil redisUtil;
 
 
+    /**
+     * 查询 秒杀信息和商品信息
+     *
+     * @param pageNum
+     * @param limit
+     * @return
+     */
     @Override
-    public List<SeckillGoodsAggregates> getSeckillGoodsAggregates(Integer pageNum, Integer limit) {
+    public List<SeckillGoodsAggregates> getSeckillGoodsAggregatesList(Integer pageNum, Integer limit) {
 
         RowBounds rowBounds = new RowBounds((pageNum - 1) * limit, limit);
 
@@ -57,17 +61,21 @@ public class SeckillGoodsRepository implements ISeckillGoodsRepository {
         return new ArrayList<>(seckillGoodsAggregatesMap.values());
     }
 
+    /**
+     * 获取秒杀信息
+     *
+     * @param SeckillGoodsId
+     * @return
+     */
     @Override
-    public List<SeckillGoodsAggregates> getRedisSeckillGoodsAggregates(String seckillGoodsKey) {
+    public SeckillGoodsAggregates getSeckillGoodsAggregates(Long SeckillGoodsId) {
 
-        String seckillListJson = (String) redisUtil.getValue(seckillGoodsKey);
+        SeckillGoodsPO seckillGoodsPO = seckillGoodsDao.uerySeckillGoodsBySeckillGoodsId(SeckillGoodsId);
+        GoodsPO goods = goodsDao.queryGoodsByGoodsId(seckillGoodsPO.getGoodsId());
 
-        return JSON.parseArray(seckillListJson, SeckillGoodsAggregates.class);
-    }
-
-    @Override
-    public void setRedisSeckillGoodsAggregates(String seckillGoodsKey, List<SeckillGoodsAggregates> seckillGoodsAggregatesList) {
-        redisUtil.setValueWithExpiry(seckillGoodsKey, JSON.toJSONString(seckillGoodsAggregatesList), 5L, TimeUnit.MINUTES);
+        return SeckillGoodsAggregates.builder().goodsId(seckillGoodsPO.getGoodsId())
+                .seckillGoods(ToSeckillGoodsEntity.INSTANCE.convert(seckillGoodsPO))
+                .goods(ToGoodsEntity.INSTANCE.convert(goods)).build();
     }
 
     private SeckillGoodsAggregates buildSeckillGoodsAggregates(SeckillGoodsEntity seckillGoods) {

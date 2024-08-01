@@ -21,8 +21,9 @@ public class SeckillController {
     /**
      * 秒杀商品
      */
-    @GetMapping(path = "/doSeckill/{seckillGoodsId}")
-    public Result<Void> doSeckill(@RequestBody DoSeckillReqDTO doSeckillReqDTO, @PathVariable("seckillGoodsId") Long seckillGoodsId){
+    @GetMapping(path = "/doSeckill")
+    public Result<Void> doSeckill(@RequestBody DoSeckillReqDTO doSeckillReqDTO){
+        seckillCommand.doSeckill(doSeckillReqDTO);
         return Result.success();
     }
 }

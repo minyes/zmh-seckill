@@ -1,6 +1,7 @@
 package com.zmh.domain.goods.service;
 
 import com.zmh.domain.goods.model.aggregates.SeckillGoodsAggregates;
+import com.zmh.domain.goods.repository.ISeckillGoodsCacheRepository;
 import com.zmh.domain.goods.repository.ISeckillGoodsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,6 +21,8 @@ public class SeckillGoodsService implements ISeckillGoodsService {
 
     private final ISeckillGoodsRepository seckillGoodsRepository;
 
+    private final ISeckillGoodsCacheRepository seckillGoodsCacheRepository;
+
     private static final String seckillGoodsKey = "seckillGoodsKey";
 
     @Override
@@ -27,25 +30,30 @@ public class SeckillGoodsService implements ISeckillGoodsService {
         // 判断当前页是否为前三页 是 从redis拿  不是 从库里拿并缓存到redis中
         if (pageNum < 4) {
             List<SeckillGoodsAggregates> seckillGoodsAggregatesList
-                    = seckillGoodsRepository.getRedisSeckillGoodsAggregates(seckillGoodsKey + pageNum);
+                    = seckillGoodsCacheRepository.getRedisSeckillGoodsAggregates(seckillGoodsKey + pageNum);
             if (!CollectionUtils.isEmpty(seckillGoodsAggregatesList)) {
                 return seckillGoodsAggregatesList;
             }
             // 查询秒杀商品
             List<SeckillGoodsAggregates> querySeckillGoodsAggregatesList
-                    = seckillGoodsRepository.getSeckillGoodsAggregates(pageNum, limit);
+                    = seckillGoodsRepository.getSeckillGoodsAggregatesList(pageNum, limit);
 
             if (CollectionUtils.isEmpty(querySeckillGoodsAggregatesList)) {
                 return querySeckillGoodsAggregatesList;
             }
             // 缓存到redis中 五分钟失效
-            seckillGoodsRepository
+            seckillGoodsCacheRepository
                     .setRedisSeckillGoodsAggregates(seckillGoodsKey + pageNum, querySeckillGoodsAggregatesList);
             return querySeckillGoodsAggregatesList;
 
         }
         // 当前页不是前三页 从库中取
-        return seckillGoodsRepository.getSeckillGoodsAggregates(pageNum, limit);
+        return seckillGoodsRepository.getSeckillGoodsAggregatesList(pageNum, limit);
+    }
+
+    @Override
+    public SeckillGoodsAggregates querySeckillGoodsDetails(Long seckillGoodsId) {
+        return seckillGoodsRepository.getSeckillGoodsAggregates(seckillGoodsId);
     }
 
 }

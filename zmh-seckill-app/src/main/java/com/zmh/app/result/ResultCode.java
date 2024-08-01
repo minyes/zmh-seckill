@@ -18,7 +18,9 @@ public enum ResultCode {
     PARAM_IS_INVALID("SK1002", "参数无效"),
     PARAM_IS_BLANK("SK1003", "参数为空"),
     PARAM_TYPE_BIND_ERROR("SK1004", "参数类型错误"),
-    SYSTEM_ERROR("SK1999","系统出现异常");
+    SYSTEM_ERROR("SK1999","系统出现异常"),
+
+    UNDER_STOCK("SK2001","库存不足");
 
     private String code;
     private String message;
