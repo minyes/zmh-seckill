@@ -21,14 +21,14 @@ public class SeckillOrderController {
     /**
      * 秒杀订单查询
      */
-    @GetMapping(path = "/{seckillOrderId}")
-    public Result<QuerySeckillOrderRespDTO> getSeckillOrder(@PathVariable("seckillOrderId") Long seckillOrderId){
+    @GetMapping(path = "/{orderId}")
+    public Result<QuerySeckillOrderRespDTO> getSeckillOrder(@PathVariable("orderId") Long orderId){
 
-        return Result.success();
+        return Result.success(seckillOrderCommand.getSeckillOrder(orderId));
     }
     @GetMapping(path = "/pay/{seckillOrderId}")
     public Result<Void> paySeckillOrder(@RequestBody PaySeckillOrderReqDTO paySeckillOrderReqDTO, @PathVariable("seckillOrderId") Long seckillOrderId){
-
+        seckillOrderCommand.paySeckillOrder(paySeckillOrderReqDTO,seckillOrderId);
         return Result.success();
     }
 }

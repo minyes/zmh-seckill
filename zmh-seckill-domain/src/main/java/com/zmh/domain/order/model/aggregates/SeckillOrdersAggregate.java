@@ -16,7 +16,7 @@ import lombok.NoArgsConstructor;
 @Builder
 @NoArgsConstructor
 @AllArgsConstructor
-public class CreateSeckillOrdersAggregate {
+public class SeckillOrdersAggregate {
 
     /**
      * 订单信息

@@ -13,8 +13,10 @@ import java.util.List;
 @Mapper
 public interface OrdersDao {
 
-    List<OrdersPO> getOrdersList(List<Long> ordersIds);
+    List<OrdersPO> queryOrdersList(List<Long> ordersIds);
 
     int insertOders(OrdersPO ordersPO);
+
+    OrdersPO queryOrder(Long ordersId);
 
 }

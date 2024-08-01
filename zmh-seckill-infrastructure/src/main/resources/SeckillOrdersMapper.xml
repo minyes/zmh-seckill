@@ -31,4 +31,10 @@
         <include refid="fields"/>
         from seckill_orders where user_id = #{userId} and seckill_goods_id = #{seckillGoodsId}
     </select>
+
+    <select id="querySeckillOrder" resultMap="BaseMap" parameterType="long">
+        select
+        <include refid="fields"/>
+        from seckill_orders where order_id = #{goodsId}
+    </select>
 </mapper>

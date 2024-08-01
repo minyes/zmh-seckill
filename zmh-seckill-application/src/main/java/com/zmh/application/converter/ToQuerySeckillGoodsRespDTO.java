@@ -13,5 +13,5 @@ import org.mapstruct.factory.Mappers;
  */
 @Mapper
 public interface ToQuerySeckillGoodsRespDTO extends PlusMapper<QuerySeckillGoodsRespDTO, SeckillGoodsAggregates> {
-    ToQuerySeckillGoodsRespDTO INSTANCE = Mappers.getMapper(ToQuerySeckillGoodsRespDTO.class);
+    ToQuerySeckillOrderRespDTO INSTANCE = Mappers.getMapper(ToQuerySeckillOrderRespDTO.class);
 }

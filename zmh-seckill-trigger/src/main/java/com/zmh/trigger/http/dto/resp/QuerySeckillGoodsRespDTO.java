@@ -5,7 +5,7 @@ import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
- * @Description: QuerySeckillGoodsResp
+ * @Description: QuerySeckillGoodsRespDTO
  * @author: zhou ming hao
  * @date: 2024年07月28日 21:46
  */

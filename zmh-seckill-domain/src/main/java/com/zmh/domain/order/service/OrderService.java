@@ -3,7 +3,7 @@ package com.zmh.domain.order.service;
 import com.zmh.app.excption.SeckillException;
 import com.zmh.app.result.ResultCode;
 import com.zmh.app.utils.SnowFlakeUtil;
-import com.zmh.domain.order.model.aggregates.CreateSeckillOrdersAggregate;
+import com.zmh.domain.order.model.aggregates.SeckillOrdersAggregate;
 import com.zmh.domain.order.model.entity.*;
 import com.zmh.domain.order.model.valobj.OrderStatus;
 import com.zmh.domain.order.repository.ISeckillOrderRepository;
@@ -48,7 +48,12 @@ public class OrderService implements IOrderService {
                 .seckillGoodsId(seckillGoods.getSeckillGoodsId()).build();
 
         //下订单
-        seckillOrderRepository.createSeckillOrder(CreateSeckillOrdersAggregate.builder().orders(ordersEntity).seckillOrders(seckillOrders).build());
+        seckillOrderRepository.createSeckillOrder(SeckillOrdersAggregate.builder().orders(ordersEntity).seckillOrders(seckillOrders).build());
+    }
+
+    @Override
+    public SeckillOrdersAggregate getOrder(Long orderId) {
+        return seckillOrderRepository.queryOrder(orderId);
     }
 
 

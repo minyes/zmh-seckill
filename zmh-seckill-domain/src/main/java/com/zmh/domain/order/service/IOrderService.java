@@ -1,5 +1,6 @@
 package com.zmh.domain.order.service;
 
+import com.zmh.domain.order.model.aggregates.SeckillOrdersAggregate;
 import com.zmh.domain.order.model.entity.PlaceOrderEntity;
 
 /**
@@ -12,4 +13,5 @@ public interface IOrderService {
 
     void placeOrder(PlaceOrderEntity placeOrder);
 
+    SeckillOrdersAggregate getOrder(Long orderId);
 }

@@ -1,5 +1,6 @@
 package com.zmh.trigger.http.dto.req;
 
+import io.swagger.annotations.ApiModelProperty;
 import lombok.Data;
 
 /**
@@ -9,13 +10,10 @@ import lombok.Data;
  */
 @Data
 public class QuerySeckillGoodsReqDTO {
-    /**
-     * 当前页
-     */
+
+    @ApiModelProperty(value = "当前页")
     private Integer pageNum;
 
-    /**
-     * 查询条数
-     */
+    @ApiModelProperty(value = "查询条数")
     private Integer limit;
 }

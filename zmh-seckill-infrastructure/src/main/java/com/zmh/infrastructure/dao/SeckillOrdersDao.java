@@ -20,4 +20,6 @@ public interface SeckillOrdersDao {
 
     SeckillOrdersPO querySeckillOrderByUserIdAndGoodsid(Long userId, Long goodsid);
 
+    SeckillOrdersPO querySeckillOrder(Long goodsId);
+
 }
