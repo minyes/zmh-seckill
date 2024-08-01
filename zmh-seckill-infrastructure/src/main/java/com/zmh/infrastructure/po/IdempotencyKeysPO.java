@@ -32,6 +32,11 @@ public class IdempotencyKeysPO {
     private String responsePayload;
 
     /**
+     * 交易码
+     */
+    private String transCode;
+
+    /**
      * 创建时间
      */
     private LocalDateTime createdDate;

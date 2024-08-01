@@ -1,6 +1,9 @@
 package com.zmh.domain.idempotency.model.entity;
 
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 /**
  * @Description: IdempotencyKeysPO
@@ -8,6 +11,9 @@ import lombok.Data;
  * @date: 2024年07月29日 23:56
  */
 @Data
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
 public class IdempotencyKeysEntity {
 
     /**
@@ -24,5 +30,10 @@ public class IdempotencyKeysEntity {
      * 响应数据
      */
     private String responsePayload;
+
+    /**
+     * 交易码
+     */
+    private String transCode;
 
 }

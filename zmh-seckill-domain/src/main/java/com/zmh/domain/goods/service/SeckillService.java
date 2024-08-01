@@ -4,6 +4,7 @@ import com.zmh.app.excption.SeckillException;
 import com.zmh.app.result.ResultCode;
 import com.zmh.domain.goods.model.entity.DoSeckillEntity;
 import com.zmh.domain.goods.repository.ISeckillCacheRepository;
+import com.zmh.domain.goods.repository.ISeckillMQMessageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;
@@ -25,24 +26,24 @@ public class SeckillService implements ISeckillService, InitializingBean {
 
     private ISeckillCacheRepository seckillCacheRepository;
 
+    private ISeckillMQMessageRepository seckillMQMessageRepository;
 
     /**
      * 秒杀商品
-     * @param seckillEntity
+     * @param doSeckillEntity
      */
     @Transactional(rollbackFor = Exception.class)
     @Override
-    public void doSeckil(DoSeckillEntity seckillEntity) {
-        //判断是否重复抢购 落幂等表 强控  userId+goodsId
+    public void doSeckil(DoSeckillEntity doSeckillEntity) {
 
         // 判断内存中 内存中库存标识是否为 true有库存  false没库存 直接返回失败
-        Boolean flag = stock_flag.get(seckillEntity.getSeckillGoodsId());
+        Boolean flag = stock_flag.get(doSeckillEntity.getSeckillGoodsId());
         if(flag != null && !flag){
             throw new SeckillException(ResultCode.UNDER_STOCK);
         }
 
         // 抢库存  redis 扣减库存
-        Long stock = seckillCacheRepository.rebateStock(seckillEntity.getSeckillGoodsId());
+        Long stock = seckillCacheRepository.rebateStock(doSeckillEntity.getSeckillGoodsId());
 
         if(stock < 0){
             //库存异常
@@ -51,13 +52,13 @@ public class SeckillService implements ISeckillService, InitializingBean {
 
         // 设置库存内存标识
         if(stock == 0){
-            stock_flag.put(seckillEntity.getSeckillGoodsId(),false);
+            stock_flag.put(doSeckillEntity.getSeckillGoodsId(),false);
         }else {
-            stock_flag.put(seckillEntity.getSeckillGoodsId(),true);
+            stock_flag.put(doSeckillEntity.getSeckillGoodsId(),true);
         }
 
         // 调mq 异步下单
-
+        seckillMQMessageRepository.placeOrder(doSeckillEntity);
 
 
     }

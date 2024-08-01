@@ -78,6 +78,7 @@ CREATE TABLE idempotency_keys
     idempotency_key  VARCHAR(255) NOT NULL COMMENT '幂等性键，唯一标识每个请求',
     request_payload  TEXT         NOT NULL COMMENT '请求的负载数据，用于记录请求的具体内容',
     response_payload TEXT COMMENT '响应的负载数据，用于记录响应的具体内容',
+    trans_code VARCHAR(6) NOT NULL COMMENT '交易码',
     created_date       DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP COMMENT '请求的创建时间',
     updated_date       DATETIME     NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP COMMENT '记录的最近更新时间'
 ) COMMENT '幂等性表';
