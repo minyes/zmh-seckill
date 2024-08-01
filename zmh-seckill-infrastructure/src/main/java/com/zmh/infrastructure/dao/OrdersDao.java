@@ -14,4 +14,7 @@ import java.util.List;
 public interface OrdersDao {
 
     List<OrdersPO> getOrdersList(List<Long> ordersIds);
+
+    int insertOders(OrdersPO ordersPO);
+
 }

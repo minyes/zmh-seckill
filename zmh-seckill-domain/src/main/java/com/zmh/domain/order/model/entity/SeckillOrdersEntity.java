@@ -29,7 +29,7 @@ public class SeckillOrdersEntity {
     /**
      * 秒杀商品ID
      */
-    private Long seckillProductId;
+    private Long seckillGoodsId;
 
     /**
      * 订单ID

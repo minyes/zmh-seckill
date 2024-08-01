@@ -20,7 +20,9 @@ public enum ResultCode {
     PARAM_TYPE_BIND_ERROR("SK1004", "参数类型错误"),
     SYSTEM_ERROR("SK1999","系统出现异常"),
 
-    UNDER_STOCK("SK2001","库存不足");
+    UNDER_STOCK("SK2001","库存不足"),
+    REPEAT_ORDER("SK2002","重复下单");
+
 
     private String code;
     private String message;

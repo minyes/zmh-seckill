@@ -1,7 +1,7 @@
 package com.zmh.application.converter;
 
 import com.zmh.app.common.PlusMapper;
-import com.zmh.domain.goods.model.aggregates.SeckillGoodsAggregates;
+import com.zmh.domain.order.model.aggregates.SeckillGoodsAggregates;
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsRespDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

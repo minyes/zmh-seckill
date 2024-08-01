@@ -1,6 +1,6 @@
-package com.zmh.domain.goods.repository;
+package com.zmh.domain.order.repository;
 
-import com.zmh.domain.goods.model.aggregates.SeckillGoodsAggregates;
+import com.zmh.domain.order.model.aggregates.SeckillGoodsAggregates;
 
 import java.util.List;
 

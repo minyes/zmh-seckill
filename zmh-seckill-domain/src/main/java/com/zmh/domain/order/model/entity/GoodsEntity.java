@@ -1,4 +1,4 @@
-package com.zmh.domain.goods.model.entity;
+package com.zmh.domain.order.model.entity;
 
 import lombok.Data;
 

@@ -1,7 +1,7 @@
-package com.zmh.domain.goods.model.aggregates;
+package com.zmh.domain.order.model.aggregates;
 
-import com.zmh.domain.goods.model.entity.GoodsEntity;
-import com.zmh.domain.goods.model.entity.SeckillGoodsEntity;
+import com.zmh.domain.order.model.entity.GoodsEntity;
+import com.zmh.domain.order.model.entity.SeckillGoodsEntity;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;

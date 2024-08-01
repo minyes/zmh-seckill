@@ -1,6 +1,6 @@
 package com.zmh.infrastructure.repository.cache;
 
-import com.zmh.domain.goods.repository.ISeckillCacheRepository;
+import com.zmh.domain.order.repository.ISeckillCacheRepository;
 import com.zmh.infrastructure.dao.SeckillGoodsDao;
 import com.zmh.infrastructure.po.SeckillGoodsPO;
 import com.zmh.infrastructure.utils.redis.RedisUtil;

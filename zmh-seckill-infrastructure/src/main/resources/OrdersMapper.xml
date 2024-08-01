@@ -12,7 +12,15 @@
         <result column="created_date" property="createdDate"/>
         <result column="updated_date" property="updatedDate"/>
     </resultMap>
+    <insert id="insertOders">
+        insert into orders(order_id, user_id, total_amount, order_status)
+        values (
+                #{orderId},#{userId},#{totalAmount},#{orderStatus}
+               )
+    </insert>
     <select id="getOrdersList" resultMap="BaseMap" parameterType="list">
     select * from orders
     </select>
+
+
 </mapper>

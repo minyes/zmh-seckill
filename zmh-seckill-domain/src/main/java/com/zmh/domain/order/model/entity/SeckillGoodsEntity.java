@@ -1,7 +1,8 @@
-package com.zmh.domain.goods.model.entity;
+package com.zmh.domain.order.model.entity;
 
 import lombok.Data;
 
+import java.math.BigDecimal;
 import java.time.LocalDate;
 
 /**
@@ -25,7 +26,7 @@ public class SeckillGoodsEntity {
     /**
      * 秒杀价格
      */
-    private String seckillPrice;
+    private BigDecimal seckillPrice;
 
     /**
      * 秒杀开始时间

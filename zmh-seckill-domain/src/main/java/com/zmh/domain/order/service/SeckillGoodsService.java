@@ -1,8 +1,8 @@
-package com.zmh.domain.goods.service;
+package com.zmh.domain.order.service;
 
-import com.zmh.domain.goods.model.aggregates.SeckillGoodsAggregates;
-import com.zmh.domain.goods.repository.ISeckillGoodsCacheRepository;
-import com.zmh.domain.goods.repository.ISeckillGoodsRepository;
+import com.zmh.domain.order.model.aggregates.SeckillGoodsAggregates;
+import com.zmh.domain.order.repository.ISeckillGoodsCacheRepository;
+import com.zmh.domain.order.repository.ISeckillGoodsRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 import org.springframework.util.CollectionUtils;

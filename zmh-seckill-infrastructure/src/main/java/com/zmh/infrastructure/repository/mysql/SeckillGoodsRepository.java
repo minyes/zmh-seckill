@@ -1,9 +1,9 @@
 package com.zmh.infrastructure.repository.mysql;
 
-import com.zmh.domain.goods.model.aggregates.SeckillGoodsAggregates;
-import com.zmh.domain.goods.model.entity.GoodsEntity;
-import com.zmh.domain.goods.model.entity.SeckillGoodsEntity;
-import com.zmh.domain.goods.repository.ISeckillGoodsRepository;
+import com.zmh.domain.order.model.aggregates.SeckillGoodsAggregates;
+import com.zmh.domain.order.model.entity.GoodsEntity;
+import com.zmh.domain.order.model.entity.SeckillGoodsEntity;
+import com.zmh.domain.order.repository.ISeckillGoodsRepository;
 import com.zmh.infrastructure.converter.ToGoodsEntity;
 import com.zmh.infrastructure.converter.ToSeckillGoodsEntity;
 import com.zmh.infrastructure.dao.GoodsDao;

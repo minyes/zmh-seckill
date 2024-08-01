@@ -1,8 +1,8 @@
 package com.zmh.infrastructure.repository.cache;
 
 import com.alibaba.fastjson2.JSON;
-import com.zmh.domain.goods.model.aggregates.SeckillGoodsAggregates;
-import com.zmh.domain.goods.repository.ISeckillGoodsCacheRepository;
+import com.zmh.domain.order.model.aggregates.SeckillGoodsAggregates;
+import com.zmh.domain.order.repository.ISeckillGoodsCacheRepository;
 import com.zmh.infrastructure.utils.redis.RedisUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

@@ -1,4 +1,4 @@
-package com.zmh.domain.goods.repository;
+package com.zmh.domain.order.repository;
 
 /**
  * @Description: ISeckillCacheRepository

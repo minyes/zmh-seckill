@@ -1,7 +1,7 @@
 package com.zmh.application.cmd.seckill;
 
 import com.zmh.application.converter.ToQuerySeckillGoodsRespDTO;
-import com.zmh.domain.goods.service.ISeckillGoodsService;
+import com.zmh.domain.order.service.ISeckillGoodsService;
 import com.zmh.trigger.http.cmd.ISeckillGoodsCommand;
 import com.zmh.trigger.http.dto.req.QuerySeckillGoodsReqDTO;
 import com.zmh.trigger.http.dto.resp.QuerySeckillGoodsRespDTO;

@@ -1,10 +1,10 @@
-package com.zmh.domain.goods.service;
+package com.zmh.domain.order.service;
 
 import com.zmh.app.excption.SeckillException;
 import com.zmh.app.result.ResultCode;
-import com.zmh.domain.goods.model.entity.DoSeckillEntity;
-import com.zmh.domain.goods.repository.ISeckillCacheRepository;
-import com.zmh.domain.goods.repository.ISeckillMQMessageRepository;
+import com.zmh.domain.order.model.entity.DoSeckillEntity;
+import com.zmh.domain.order.repository.ISeckillCacheRepository;
+import com.zmh.domain.order.repository.ISeckillMQMessageRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.InitializingBean;
 import org.springframework.stereotype.Service;

@@ -1,6 +1,6 @@
-package com.zmh.domain.goods.repository;
+package com.zmh.domain.order.repository;
 
-import com.zmh.domain.goods.model.entity.DoSeckillEntity;
+import com.zmh.domain.order.model.entity.DoSeckillEntity;
 
 /**
  * @Description: ISeckillMQMessageRepository

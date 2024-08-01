@@ -12,12 +12,6 @@ import com.zmh.trigger.http.dto.resp.QuerySeckillOrderRespDTO;
 public interface ISeckillOrderCommand {
 
     /**
-     * 下单
-     */
-    void downOrder();
-
-
-    /**
      * 获取订单信息
      * @param seckillOrderId
      * @return
@@ -30,4 +24,5 @@ public interface ISeckillOrderCommand {
      * @param seckillOrderId
      */
     void paySeckillOrder(PaySeckillOrderReqDTO paySeckillOrderReqDTO, Long seckillOrderId);
+
 }

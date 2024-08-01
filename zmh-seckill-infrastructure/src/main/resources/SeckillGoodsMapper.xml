@@ -36,4 +36,10 @@
         <include refid="fields"/>
         from seckill_goods where end_time > now()
     </select>
+
+    <select id="querySeckillGoods" resultMap="BaseMap" parameterType="long">
+        select
+        <include refid="fields"/>
+        from seckill_goods where seckill_goods_id = #{seckillGoodsId}
+    </select>
 </mapper>

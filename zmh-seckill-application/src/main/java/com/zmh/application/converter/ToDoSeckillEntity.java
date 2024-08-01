@@ -1,7 +1,7 @@
 package com.zmh.application.converter;
 
 import com.zmh.app.common.PlusMapper;
-import com.zmh.domain.goods.model.entity.DoSeckillEntity;
+import com.zmh.domain.order.model.entity.DoSeckillEntity;
 import com.zmh.trigger.http.dto.req.DoSeckillReqDTO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

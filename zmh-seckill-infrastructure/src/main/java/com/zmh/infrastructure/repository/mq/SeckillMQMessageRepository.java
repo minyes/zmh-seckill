@@ -2,8 +2,8 @@ package com.zmh.infrastructure.repository.mq;
 
 import com.alibaba.fastjson2.JSON;
 import com.zmh.app.mq.DirectExchangeConfig;
-import com.zmh.domain.goods.model.entity.DoSeckillEntity;
-import com.zmh.domain.goods.repository.ISeckillMQMessageRepository;
+import com.zmh.domain.order.model.entity.DoSeckillEntity;
+import com.zmh.domain.order.repository.ISeckillMQMessageRepository;
 import com.zmh.infrastructure.utils.mq.DirectMqUtil;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;

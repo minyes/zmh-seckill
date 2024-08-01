@@ -13,12 +13,6 @@ import org.springframework.stereotype.Component;
 @Component
 public class SeckillOrderCommand implements ISeckillOrderCommand {
 
-    @Override
-    public void downOrder() {
-        // 判断 库中是否有库存 没有 下单失败
-        // 下单
-    }
-
     /**
      *
      * @param seckillOrderId

@@ -14,5 +14,10 @@ import java.util.List;
 @Mapper
 public interface SeckillOrdersDao {
 
-    List<SeckillOrdersPO> getSeckillOrder(RowBounds rowBounds);
+    List<SeckillOrdersPO> getSeckillOrderList(RowBounds rowBounds);
+
+    int insertSeckillOrders(SeckillOrdersPO seckillOrdersPO);
+
+    SeckillOrdersPO querySeckillOrderByUserIdAndGoodsid(Long userId, Long goodsid);
+
 }

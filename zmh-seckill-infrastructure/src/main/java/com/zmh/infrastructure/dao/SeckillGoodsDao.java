@@ -20,4 +20,6 @@ public interface SeckillGoodsDao {
 
     List<SeckillGoodsPO> querySeckillGoodsAll();
 
+    SeckillGoodsPO querySeckillGoods(Long seckillGoodsId);
+
 }

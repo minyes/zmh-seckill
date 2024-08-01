@@ -1,7 +1,7 @@
 package com.zmh.infrastructure.converter;
 
 import com.zmh.app.common.PlusMapper;
-import com.zmh.domain.goods.model.entity.GoodsEntity;
+import com.zmh.domain.order.model.entity.GoodsEntity;
 import com.zmh.infrastructure.po.GoodsPO;
 import org.mapstruct.Mapper;
 import org.mapstruct.factory.Mappers;

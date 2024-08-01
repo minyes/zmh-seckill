@@ -1,7 +1,7 @@
 package com.zmh.trigger.mq;
 
 import com.zmh.app.mq.DirectExchangeConfig;
-import com.zmh.trigger.http.cmd.ISeckillOrderCommand;
+import com.zmh.trigger.mq.cmd.IOrdersCommand;
 import lombok.RequiredArgsConstructor;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.amqp.rabbit.annotation.RabbitHandler;
@@ -19,18 +19,17 @@ import org.springframework.stereotype.Component;
 public class SeckillOrderQueueListener {
 
 
-    private final ISeckillOrderCommand seckillOrderCommand;
+    private final IOrdersCommand ordersCommand;
 
     /**
      * 秒杀订单消费消息
-     * @param testMessage
+     * @param message
      */
     @RabbitHandler
     @RabbitListener(queues = DirectExchangeConfig.DIRECT_QUEUE)
-    public void process(String testMessage) {
-        System.out.println("DirectReceiver消费者收到消息1  : " + testMessage + "\n");
-
-
+    public void process(String message) {
+        System.out.println("DirectReceiver消费者收到消息  : " + message + "\n");
+        ordersCommand.placeOrder(message);
     }
 
 

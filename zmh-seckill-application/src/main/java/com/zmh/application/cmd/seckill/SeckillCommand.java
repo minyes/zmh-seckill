@@ -1,7 +1,7 @@
 package com.zmh.application.cmd.seckill;
 
 import com.zmh.application.converter.ToDoSeckillEntity;
-import com.zmh.domain.goods.service.ISeckillService;
+import com.zmh.domain.order.service.ISeckillService;
 import com.zmh.domain.idempotency.model.entity.IdempotencyKeysEntity;
 import com.zmh.domain.idempotency.service.IIdempotencyService;
 import com.zmh.trigger.http.cmd.ISeckillCommand;
@@ -30,7 +30,7 @@ public class SeckillCommand implements ISeckillCommand {
         // 落幂等表 强控  userId+goodsId
         idempotencyService.idempotency(IdempotencyKeysEntity.builder().transCode("seckill")
                 .idempotencyKey(doSeckillReqDTO.getUserId() + ":" + doSeckillReqDTO.getSeckillGoodsId()).build());
-        //下单
+        //秒杀
         seckillService.doSeckil(ToDoSeckillEntity.INSTANCE.convert(doSeckillReqDTO));
 
     }
