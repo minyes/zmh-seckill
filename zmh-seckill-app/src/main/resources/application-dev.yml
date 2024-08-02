@@ -12,10 +12,16 @@ spring:
     port: 5672
     username: guest
     password: guest
+redis:
+  hostname: 127.0.01
+  port: 6379
+  maxTotal: 10
+  maxIdle: 5
+  minIdle: 1
+  maxWaitMills: 2000
 mybatis-plus:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
-
 # 端口配置
 server:
   port: 8081

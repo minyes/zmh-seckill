@@ -1,6 +1,7 @@
 package com.zmh.app.redis;
 
 import org.apache.commons.pool2.impl.GenericObjectPoolConfig;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.cache.annotation.CachingConfigurerSupport;
 import org.springframework.cache.annotation.EnableCaching;
 import org.springframework.context.annotation.Bean;
@@ -22,6 +23,23 @@ import org.springframework.data.redis.serializer.StringRedisSerializer;
 @Configuration  // 配置类
 public class RedisConfig extends CachingConfigurerSupport {
 
+    @Value("${redis.hostname}")
+    private String REDIS_HOSTNAME;
+
+    @Value("${redis.port}")
+    private int REDIS_PORT;
+
+    @Value("${redis.maxTotal}")
+    private int REDIS_MAX_TOTAL;
+
+    @Value("${redis.maxIdle}")
+    private int REDIS_MAX_IDLE;
+
+    @Value("${redis.minIdle}")
+    private int REDIS_MIN_IDLE;
+
+    @Value("${redis.maxWaitMills}")
+    private int REDIS_MAX_WAIT_MILLIS;
 
     /**
      * 配置 Redis 连接工厂
@@ -32,16 +50,16 @@ public class RedisConfig extends CachingConfigurerSupport {
     public LettuceConnectionFactory redisConnectionFactory() {
         // 配置 Redis 服务器的连接信息
         RedisStandaloneConfiguration redisStandaloneConfiguration = new RedisStandaloneConfiguration();
-        redisStandaloneConfiguration.setHostName("localhost");
-        redisStandaloneConfiguration.setPort(6379);
+        redisStandaloneConfiguration.setHostName(REDIS_HOSTNAME);
+        redisStandaloneConfiguration.setPort(REDIS_PORT);
         // redisStandaloneConfiguration.setPassword("password"); // 取消注释以设置密码
 
         // 配置连接池
         GenericObjectPoolConfig<Object> poolConfig = new GenericObjectPoolConfig<>();
-        poolConfig.setMaxTotal(10);       // 连接池中的最大连接数
-        poolConfig.setMaxIdle(5);         // 连接池中的最大空闲连接数
-        poolConfig.setMinIdle(1);         // 连接池中的最小空闲连接数
-        poolConfig.setMaxWaitMillis(2000); // 连接池获取连接的最大等待时间
+        poolConfig.setMaxTotal(REDIS_MAX_TOTAL);       // 连接池中的最大连接数
+        poolConfig.setMaxIdle(REDIS_MAX_IDLE);         // 连接池中的最大空闲连接数
+        poolConfig.setMinIdle(REDIS_MIN_IDLE);         // 连接池中的最小空闲连接数
+        poolConfig.setMaxWaitMillis(REDIS_MAX_WAIT_MILLIS); // 连接池获取连接的最大等待时间
 
         // 创建一个带有连接池配置的 Lettuce 客户端配置
         LettucePoolingClientConfiguration lettucePoolingClientConfiguration =
