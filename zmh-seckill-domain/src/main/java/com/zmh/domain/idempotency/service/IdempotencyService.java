@@ -22,6 +22,9 @@ public class IdempotencyService implements IIdempotencyService{
      */
     @Override
     public void idempotency(IdempotencyKeysEntity idempotencyKeysEntity) {
+
+        idempotencyKeysEntity.checkIdempotencyKey();
+
         idempotencyRepository.createIdempotencyKeys(idempotencyKeysEntity);
     }
 }

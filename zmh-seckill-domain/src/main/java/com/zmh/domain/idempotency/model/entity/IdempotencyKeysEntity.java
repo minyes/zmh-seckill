@@ -1,9 +1,12 @@
 package com.zmh.domain.idempotency.model.entity;
 
+import com.zmh.app.excption.SeckillException;
+import com.zmh.app.result.ResultCode;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.springframework.util.StringUtils;
 
 /**
  * @Description: IdempotencyKeysPO
@@ -36,4 +39,7 @@ public class IdempotencyKeysEntity {
      */
     private String transCode;
 
+    public void checkIdempotencyKey(){
+        if(StringUtils.isEmpty(idempotencyKey))throw new SeckillException(ResultCode.IDEMPOTENCY_KEY_IS_NULL);
+    }
 }
