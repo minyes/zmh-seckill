@@ -53,6 +53,7 @@ public class OrderService implements IOrderService {
 
     @Override
     public SeckillOrdersAggregate getOrder(Long orderId) {
+        //查询redis 是否下单成功
         return seckillOrderRepository.queryOrder(orderId);
     }
 
