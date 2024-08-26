@@ -24,6 +24,11 @@
         </dependency>
         <dependency>
             <groupId>com.zmh</groupId>
+            <artifactId>zmh-seckill-app</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.zmh</groupId>
             <artifactId>zmh-seckill-trigger</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>

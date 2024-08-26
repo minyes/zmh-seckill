@@ -17,7 +17,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
  * @date: 2024年07月28日 17:06
  */
 
-@RestControllerAdvice(basePackages = {"com.demo.controller"})
+@RestControllerAdvice(basePackages = {"com.zmh.trigger"})
 public class GlobalResponseAdvice implements ResponseBodyAdvice<Object> {
     @Override
     public boolean supports(MethodParameter returnType, Class<? extends HttpMessageConverter<?>> converterType) {
